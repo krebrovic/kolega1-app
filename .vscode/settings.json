@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "postgresql://krebrovic:D5YZVGXfXOOS0U5tHbjJIujUhLoxeyNu@dpg-d1qkl17fte5s73dfjmag-a.frankfurt-postgres.render.com/dp_db_4ra7",
+            "driver": "PostgreSQL",
+            "name": "postges",
+            "connectString": "postgresql://krebrovic:D5YZVGXfXOOS0U5tHbjJIujUhLoxeyNu@dpg-d1qkl17fte5s73dfjmag-a.frankfurt-postgres.render.com/dp_db_4ra7",
+            "database": "dp_db_4ra7",
+            "username": "krebrovic"
+        }
+    ]
+}
