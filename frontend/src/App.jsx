@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GoogleLogin } from "@react-oauth/google";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -31,11 +32,19 @@ function LoginForm() {
   return (
     <div className="bg-gray-800 p-8 rounded-2xl shadow-lg flex flex-col items-center w-full max-w-xs">
       <h2 className="text-2xl font-bold mb-4 text-green-400">Login</h2>
-      <p className="text-green-300 mb-6 text-center">Sign in to access your team's shift calendar</p>
-      {/* This button will be replaced with Google login next */}
-      <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg transition w-full mb-2">
-        Login with Google
-      </button>
+      <p className="text-green-300 mb-6 text-center">
+        Sign in to access your team's shift calendar
+      </p>
+      <GoogleLogin
+        onSuccess={credentialResponse => {
+          // TODO: send credentialResponse.credential to your backend for validation
+          alert("Login successful! (You’ll connect backend next)");
+        }}
+        onError={() => {
+          alert("Login Failed");
+        }}
+        useOneTap
+      />
     </div>
   );
 }
